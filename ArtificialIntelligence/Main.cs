@@ -11,9 +11,10 @@ namespace ArtificialIntelligence
         public Main()
         {
             Brain bob = new Brain("Bob");
-            bob.addBrainArea("NumberRecognising");
-            BrainArea NumbRecog = bob.getBrainArea(bob.getBrainAreasCount() - 1);
-            NumbRecog.addNeuron();
+            BrainArea NumbRecog = new BrainArea("NumberRecognition");
+            bob.AddBrainArea(NumbRecog);
+            Neuron neuron = new InputNeuron(NumbRecog, 0);
+            NumbRecog.AddNeuron(neuron);
 
 
         }

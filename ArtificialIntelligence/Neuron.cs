@@ -7,39 +7,73 @@ using System.Threading.Tasks;
 namespace ArtificialIntelligence
 {
     //Encapsulating class
-    class Neuron
+    abstract class Neuron
     {
-        private Cell processingUnit;
-        private Dendrit[] inputs;
-        private Axon output;
-
-        public Neuron()
+        protected BrainArea brainArea;
+        protected int layer;
+        protected double value;
+        protected List<Connection> inputConnections;
+        protected List<Connection>  outputConnections;
+     
+        public Neuron(BrainArea parBrainArea, int parLayer)
         {
-            this.processingUnit = new Cell(this);
+            this.brainArea = parBrainArea;
+            this.layer = parLayer;
+            List<Neuron> neuronList = new List<Neuron>();
 
-            this.output = new Axon(this);
+            //Connect new neuron to all neurons on the layer under itself
+            neuronList = parBrainArea.GetNeuronsOfLayer(parLayer - 1);
+            for (int subLayerNeuron = 0; subLayerNeuron < neuronList.Count(); subLayerNeuron++)
+            {
+                Connection neuronConnection = new Connection(neuronList[subLayerNeuron], this);
+                neuronList[subLayerNeuron].AddOutputConnection(neuronConnection);
+                this.AddInputConnection(neuronConnection);
+            }
+
+            //Connect new neuron to all neurons on the layer above itself
+            neuronList = parBrainArea.GetNeuronsOfLayer(parLayer + 1);
+            for (int topLayerNeuron = 0; topLayerNeuron < neuronList.Count(); topLayerNeuron++)
+            {
+                Connection neuronConnection = new Connection(this, neuronList[topLayerNeuron]);
+                neuronList[topLayerNeuron].AddInputConnection(neuronConnection);
+                this.AddOutputConnection(neuronConnection);
+            }
+
+            parBrainArea.AddNeuron(this);
         }
 
-        public Dendrit addDendrit(Axon neuronOutput)
+        public double GetValue()
         {
-            Dendrit newDendrit = new Dendrit(this, neuronOutput);
-            return newDendrit;
+            return this.value;
         }
 
-        public void connectAxon(Neuron connectTo)
+        public int GetLayer()
         {
-            connectTo.addDendrit(this.output);
+            return this.layer;
         }
 
-        public Axon getAxon()
+        public void AddInputConnection(Connection newInputConnection)
         {
-            return this.output;
+            this.inputConnections[this.inputConnections.Count()] = newInputConnection;
         }
 
-        public void processInputs()
+        public void AddOutputConnection(Connection newOutputConnection)
         {
-            this.processingUnit.process(inputs);
+            this.outputConnections[this.outputConnections.Count()] = newOutputConnection;
         }
+
+        protected double SumInputConnectionValues()
+        {
+            double tempValue = 0;
+            for (int i = 0; i < this.inputConnections.Count(); i++)
+            {
+                tempValue = this.inputConnections[i].GetSourceNeuron().GetValue() * this.inputConnections[i].GetWeight();
+            }
+            return tempValue;
+        }
+
+        public abstract void ProcessInputs();
+
     }
 
 }

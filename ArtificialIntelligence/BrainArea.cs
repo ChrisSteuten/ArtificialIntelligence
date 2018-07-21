@@ -8,7 +8,7 @@ namespace ArtificialIntelligence
 {
     class BrainArea
     {
-        Neuron[] neurons;
+        List<Neuron> neurons;
         string purpose; //Description of brain area purpose
 
         public BrainArea(string parPurpose)
@@ -16,14 +16,29 @@ namespace ArtificialIntelligence
             this.purpose = parPurpose;
         }
 
-        public Neuron[] getNeurons()
+        public List<Neuron> GetAllNeurons()
         {
             return this.neurons;
         }
 
-        public void addNeuron()
+        public List<Neuron> GetNeuronsOfLayer(int parLayer)
         {
-            neurons[neurons.Count()] = new Neuron();
+            List<Neuron> tempNeuronList = new List<Neuron>();
+            int tempNeuronListCounter = 0;
+            for (int i = 0; i < this.neurons.Count(); i++)
+            {
+                if (neurons[i].GetLayer() == parLayer)
+                {
+                    tempNeuronList[tempNeuronListCounter] = neurons[i];
+                    tempNeuronListCounter++;
+                }
+            }
+            return tempNeuronList;
+        }
+
+        public void AddNeuron(Neuron parNeuron)
+        {
+            neurons[neurons.Count()] = parNeuron;
         }
     }
 }

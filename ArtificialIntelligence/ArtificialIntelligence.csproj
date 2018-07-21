@@ -54,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="InputNeuron.cs" />
+    <Compile Include="WeightedSumAndSquashNeuron.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,11 +64,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Axon.cs" />
     <Compile Include="Brain.cs" />
     <Compile Include="BrainArea.cs" />
-    <Compile Include="Cell.cs" />
-    <Compile Include="Dendrit.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

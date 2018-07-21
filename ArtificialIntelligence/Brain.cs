@@ -9,31 +9,42 @@ namespace ArtificialIntelligence
     class Brain
     {
         string name;
-        BrainArea[] brainAreas;
+        List<BrainArea> brainAreas;
 
         public Brain(string parName)
         {
             this.name = parName;
         }
 
-        public BrainArea[] getBrainAreas()
+        public List<BrainArea> GetBrainAreas()
         {
             return this.brainAreas;
         }
 
-        public int getBrainAreasCount()
+        public int GetBrainAreasCount()
         {
             return brainAreas.Count();
         }
 
-        public BrainArea getBrainArea(int index)
+        public BrainArea GetBrainArea(int index)
         {
             return brainAreas[index];
         }
 
-        public void addBrainArea(string purpose)
+        public void AddBrainArea(BrainArea parBrainArea)
         {
-            brainAreas[brainAreas.Count()] = new BrainArea(purpose);
+            brainAreas[brainAreas.Count()] = parBrainArea;
+        }
+
+        public List<Neuron> GetAllNeurons()
+        {
+            List<Neuron> tempNeuronList = new List<Neuron>();
+            for (int brainAreaCount = 0; brainAreaCount < brainAreas.Count(); brainAreaCount++)
+            {
+                tempNeuronList.AddRange(brainAreas[brainAreaCount].GetAllNeurons());
+            }
+
+            return tempNeuronList;
         }
     }
 }

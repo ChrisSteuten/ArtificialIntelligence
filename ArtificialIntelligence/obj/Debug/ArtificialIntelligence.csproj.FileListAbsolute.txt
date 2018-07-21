@@ -1,0 +1,15 @@
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\bin\Debug\ArtificialIntelligence.exe.config
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\bin\Debug\ArtificialIntelligence.exe
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\bin\Debug\ArtificialIntelligence.pdb
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence.csprojResolveAssemblyReference.cache
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\MainWindow.g.cs
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\App.g.cs
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence_MarkupCompile.cache
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence_MarkupCompile.lref
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\MainWindow.baml
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence.g.resources
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence.Properties.Resources.resources
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence.csproj.GenerateResource.Cache
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence.csproj.CoreCompileInputs.cache
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence.exe
+C:\Users\csteu\OneDrive\Dokumente\Visual Studio 2017\Projects\ArtificialIntelligence\ArtificialIntelligence\obj\Debug\ArtificialIntelligence.pdb
